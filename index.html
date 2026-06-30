@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio & Apps</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+
+    <div id="toast-container"></div>
+
+    <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Dev<span>Portfolio</span></a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#todo-app">To-Do Manager</a></li>
+                <li><a href="#product-app">Product Store</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="fade-in">Hi, I'm a <span class="gradient-text">Software Developer</span></h1>
+            <p class="fade-in">Building functional, high-performance web applications with stunning UI/UX layouts.</p>
+            <div class="hero-buttons fade-in">
+                <a href="#todo-app" class="btn primary-btn">View Projects</a>
+                <a href="#" id="download-resume" class="btn secondary-btn"><i class="fas fa-download"></i> Download Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="glass-card about-card">
+            <p>I am a passionate frontend engineer specializing in clean code architecture and responsive web design. I focus on creating high-fidelity visual interfaces that bring complex software requirements to life seamlessly across mobile, tablet, and desktop environments.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="glass-card skill-item"><i class="fab fa-html5 text-orange"></i> HTML5</div>
+            <div class="glass-card skill-item"><i class="fab fa-css3-alt text-blue"></i> CSS3 / Tailwind</div>
+            <div class="glass-card skill-item"><i class="fab fa-js text-yellow"></i> JavaScript (ES6+)</div>
+            <div class="glass-card skill-item"><i class="fab fa-react text-cyan"></i> React ecosystem</div>
+            <div class="glass-card skill-item"><i class="fas fa-brain text-purple"></i> AI RAG Frameworks</div>
+            <div class="glass-card skill-item"><i class="fas fa-database text-green"></i> LocalStorage / State</div>
+        </div>
+    </section>
+
+    <section id="todo-app" class="section app-section">
+        <h2 class="section-title">Project 1: Advanced To-Do Manager</h2>
+        <div class="glass-card todo-container">
+            <div class="todo-header">
+                <div class="input-group">
+                    <input type="text" id="todo-input" placeholder="Add a new task...">
+                    <button id="add-todo-btn" class="btn-icon"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="controls-group">
+                    <input type="text" id="todo-search" placeholder="Search tasks...">
+                    <select id="todo-filter">
+                        <option value="all">All Tasks</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                    <button id="clear-all-todos" class="btn danger-btn">Clear All</button>
+                </div>
+            </div>
+            <ul id="todo-list" class="todo-list"></ul>
+        </div>
+    </section>
+
+    <section id="product-app" class="section app-section">
+        <h2 class="section-title">Project 2: Product Listing Hub</h2>
+        <div class="product-layout">
+            <aside class="glass-card filter-sidebar">
+                <h3>Filters & Sorting</h3>
+                <div class="filter-group">
+                    <label for="category-filter">Category</label>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="apparel">Apparel</option>
+                        <option value="fitness">Fitness</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Price Range (Max: $<span id="price-value">1200</span>)</label>
+                    <input type="range" id="price-filter" min="0" max="1200" value="1200">
+                </div>
+                <div class="filter-group">
+                    <label id="sort-filter-label" for="sort-filter">Sort By</label>
+                    <select id="sort-filter">
+                        <option value="default">Default</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name-asc">Name: A to Z</option>
+                    </select>
+                </div>
+            </aside>
+            <main id="product-grid" class="product-grid"></main>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="glass-card contact-card">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="contact-name">Name</label>
+                    <input type="text" id="contact-name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email</label>
+                    <input type="email" id="contact-email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" rows="5" required placeholder="Your message details..."></textarea>
+                </div>
+                <button type="submit" class="btn primary-btn submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Developer Portfolio. Built with clean CSS Glassmorphism.</p>
+        <div class="social-icons">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
